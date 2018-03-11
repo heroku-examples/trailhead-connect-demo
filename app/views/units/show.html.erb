@@ -1,0 +1,32 @@
+
+<p>
+  <strong>Title:</strong>
+  <%= @unit.title %>
+</p>
+ 
+<p>
+  <strong>Description:</strong>
+  <%= @unit.description %>
+</p>
+
+<p>
+  <strong>Time Estimate:</strong>
+  <%= @unit.time_estimate %>
+</p>
+
+<h1>Questions</h1>
+
+<ol>
+ 
+  <% @unit.questions.each do |question| %>
+    <li>
+      <%= question.question_text %>
+      <ol type="a">
+        <% question.answers.each do |answer| %>
+          <li><%= answer['text'] %></li>
+        <% end %>
+      </ol>
+
+    </li>
+  <% end %>
+</ol>

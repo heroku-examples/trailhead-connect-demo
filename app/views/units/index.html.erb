@@ -1,1 +1,23 @@
 <p>Model after simplified https://trailhead.salesforce.com/en/modules</p>
+<p>Note that for simplicity, this demo discards "modules" in the Module->Units->Questions hierarchy.</p>
+
+
+
+<h1>Units</h1>
+ 
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Description</th>
+    <th>Time Estimate</th>
+  </tr>
+ 
+  <% @units.each do |unit| %>
+    <tr>
+      <td><%= unit.title %></td>
+      <td><%= unit.description %></td>
+      <td><%= unit.time_estimate %></td>
+      <td><%= link_to 'Show', unit_path(unit) %></td>
+    </tr>
+  <% end %>
+</table>
