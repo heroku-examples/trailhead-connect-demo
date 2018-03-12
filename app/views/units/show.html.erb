@@ -18,7 +18,7 @@
 
 <ol>
  
-  <% @unit.questions.each do |question| %>
+  <% @unit.questions.shuffle.each do |question| %>
     <li>
       <%= question.question_text %>
       <ol type="a">
