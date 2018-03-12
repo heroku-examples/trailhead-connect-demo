@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 unit1 = Unit.create(title: 'Wat? Herouk?',
-                    description: 'Choose this is you\'ve never heard of Heroku.',
+                    description: 'Choose this if you\'ve never heard of Heroku.',
                     time_estimate: 1,
                     content: 'This is an example of the unit training material.'
                   )
