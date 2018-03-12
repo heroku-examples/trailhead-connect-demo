@@ -17,7 +17,7 @@
 
     <br/>
     <% if logged_in? %>
-      <%= link_to 'Logout', logout_path %>
+      <%= link_to 'Logout', logout_path %> (logged in as <%= @current_user.name %>)
     <% end %>
   </body>
 </html>

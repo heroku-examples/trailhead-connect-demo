@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
-  before_action :store_location
+  before_action :store_location, :logged_in?
 
   def require_user
     if !logged_in?
