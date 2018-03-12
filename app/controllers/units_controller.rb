@@ -1,4 +1,6 @@
 class UnitsController < ApplicationController
+  before_action :require_user
+
   def index
     @units = Unit.all
   end

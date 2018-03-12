@@ -1,0 +1,8 @@
+<h1>Choose a character to log in as</h1>
+<%= form_tag sessions_path do %>
+  <ol>
+    <% @users.each do |user| %>
+      <li><%= submit_tag user.name %></li>
+    <% end %>
+  </ol>
+<% end %>

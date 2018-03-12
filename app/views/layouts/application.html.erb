@@ -9,6 +9,15 @@
   </head>
 
   <body>
+    <% flash.each do |name, msg| %>
+      <%= content_tag :div, msg, id: "flash_#{name}" %>
+    <% end %>
+
     <%= yield %>
+
+    <br/>
+    <% if logged_in? %>
+      <%= link_to 'Logout', logout_path %>
+    <% end %>
   </body>
 </html>
