@@ -10,10 +10,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180309214310) do
+ActiveRecord::Schema.define(version: 20180311234228) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "badges", force: :cascade do |t|
+    t.string "name"
+    t.string "image_url"
+    t.bigint "unit_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["unit_id"], name: "index_badges_on_unit_id"
+  end
+
+  create_table "earned_badges", force: :cascade do |t|
+    t.datetime "earned_at"
+    t.bigint "badge_id"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["badge_id"], name: "index_earned_badges_on_badge_id"
+    t.index ["user_id"], name: "index_earned_badges_on_user_id"
+  end
 
   create_table "questions", force: :cascade do |t|
     t.text "question_text"
@@ -28,11 +47,22 @@ ActiveRecord::Schema.define(version: 20180309214310) do
     t.string "title"
     t.text "description"
     t.integer "time_estimate"
-    t.string "badge_url"
     t.text "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
+  create_table "users", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.string "pronoun"
+    t.string "image_url"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_foreign_key "badges", "units"
+  add_foreign_key "earned_badges", "badges"
+  add_foreign_key "earned_badges", "users"
   add_foreign_key "questions", "units"
 end

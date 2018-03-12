@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  earned_at: 2018-03-11 16:27:49
+  unit: one
+  user: one
+
+two:
+  earned_at: 2018-03-11 16:27:49
+  unit: two
+  user: two
