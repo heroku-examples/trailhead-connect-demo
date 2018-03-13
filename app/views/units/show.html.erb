@@ -14,19 +14,26 @@
   <%= @unit.time_estimate %>
 </p>
 
+<p>
+  <strong>Learning material:</strong>
+  <%= @unit.content %>
+</p>
+
 <h1>Questions</h1>
 
-<ol>
- 
-  <% @unit.questions.shuffle.each do |question| %>
-    <li>
-      <%= question.question_text %>
-      <ol type="a">
-        <% question.answers.each do |answer| %>
-          <li><%= answer['text'] %></li>
-        <% end %>
-      </ol>
 
-    </li>
+<%= form_tag quiz_submission_index_path do %>
+  <% @unit.questions.shuffle.each do |question| %>
+    <fieldset>
+      <h4><%= question.question_text %></h4>
+        <% question.answers.each_with_index do |answer, idx| %>
+          <div>
+            <input type="radio" name="quiz_submission[<%= question.id %>]" id="<%= question.id %>_<%= idx %>" value="<%= idx %>">
+            <label for="<%= question.id %>_<%= idx %>"><%= answer["text"] %></label>
+          </div>
+        <% end %>
+    </fieldset>
   <% end %>
-</ol>
+  <%= hidden_field :unit, :id %>
+  <%= submit_tag "Submit Answers" %>
+<% end %>

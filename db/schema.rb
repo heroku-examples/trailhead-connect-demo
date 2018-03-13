@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180312033940) do
+ActiveRecord::Schema.define(version: 20180313043724) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,7 +30,9 @@ ActiveRecord::Schema.define(version: 20180312033940) do
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "quiz_submission_id"
     t.index ["badge_id"], name: "index_earned_badges_on_badge_id"
+    t.index ["quiz_submission_id"], name: "index_earned_badges_on_quiz_submission_id"
     t.index ["user_id"], name: "index_earned_badges_on_user_id"
   end
 
@@ -41,6 +43,16 @@ ActiveRecord::Schema.define(version: 20180312033940) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["unit_id"], name: "index_questions_on_unit_id"
+  end
+
+  create_table "quiz_submissions", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "unit_id"
+    t.jsonb "answers"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["unit_id"], name: "index_quiz_submissions_on_unit_id"
+    t.index ["user_id"], name: "index_quiz_submissions_on_user_id"
   end
 
   create_table "units", force: :cascade do |t|
@@ -64,6 +76,9 @@ ActiveRecord::Schema.define(version: 20180312033940) do
 
   add_foreign_key "badges", "units"
   add_foreign_key "earned_badges", "badges"
+  add_foreign_key "earned_badges", "quiz_submissions"
   add_foreign_key "earned_badges", "users"
   add_foreign_key "questions", "units"
+  add_foreign_key "quiz_submissions", "units"
+  add_foreign_key "quiz_submissions", "users"
 end
