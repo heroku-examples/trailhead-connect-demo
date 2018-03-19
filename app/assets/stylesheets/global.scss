@@ -1,0 +1,95 @@
+html, body, * {
+  font-family: SalesforceSans, "ProximaNovaRegular", Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  margin: 0;
+  color: #333;
+}
+
+.container:before, .container:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+
+.container:after {
+  clear: both;
+}
+
+*, :after, :before {
+  box-sizing: border-box;
+}
+
+article, aside, details, figcaption,figure, footer,
+header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+::selection {
+  color: inherit;
+}
+
+::selection {
+  background: #d8edff;
+  text-shadow: none;
+  color: #16325c;
+}
+
+img {
+  border: 0;
+  max-width: 100%;
+  height: auto;
+}
+
+audio, canvas, iframe, img, svg, video {
+  vertical-align: middle;
+}
+
+dl, fieldset, h1, h2, h3, h4, h5, h6, ol, p, ul {
+  margin: 0;
+  padding: 0;
+}
+
+p {
+  margin: 0 0 10px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 10px 0;
+  font-family: inherit;
+  font-weight: bold;
+  line-height: 20px;
+  color: inherit;
+  text-rendering: optimizelegibility;
+}
+
+dl, fieldset, h1, h2, h3, h4, h5, h6, ol, p, ul {
+  margin: 0;
+  padding: 0;
+}
+
+ul, ol {
+  padding: 0;
+  margin: 0 0 10px 25px;
+}
+
+li {
+  line-height: 20px;
+}
+
+a {
+  color: #0070d2;
+  text-decoration: none;
+  transition: color .1s linear;
+  background-color: transparent;
+}
+
+a, button {
+  cursor: pointer;
+}
+
+abbr[title], fieldset, hr {
+  border: 0;
+}

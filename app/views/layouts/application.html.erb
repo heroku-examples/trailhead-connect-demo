@@ -13,11 +13,78 @@
       <%= content_tag :div, msg, id: "flash_#{name}" %>
     <% end %>
 
+    <header>
+      <div class="header-content">
+        <a class="non-phone-header-content" title="trailhead home" href="/">
+          <img alt="trailhead" style="width: 80px;" src="<%= image_path('trailhead-logo.svg') %>">
+        </a>
+        <div class="header-nav non-phone-header-content">
+          <div class="search"></div>
+          <nav>
+            <ul>
+              <li>
+                <a href="/">Home</a>
+              </li>
+              <li>
+                <a href="/units">Units</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div class="header-login" style="margin-left: auto;">
+          <% if logged_in? %>
+            <div class="header-profile">
+              <div class="header-profile-info">
+                <div class="header-profile-name"><%= @current_user.name %> (<a href="<%= logout_path %>">Logout</a>)</div>
+                <div class="header-profile-data">7 Badges</div>
+              </div>
+              <div class="header-profile-avatar">
+                <img src="">
+              </div>
+            </div>
+          <% else %>
+            <a href="<%= login_path %>"><button class="header-login">Login</button></a>
+          <% end %>
+        </div>
+      </div>
+    </header>
+
     <%= yield %>
 
-    <br/>
-    <% if logged_in? %>
-      <%= link_to 'Logout', logout_path %> (logged in as <%= @current_user.name %>)
-    <% end %>
+    <footer>
+      <div class='container'>
+        <div class='footer-rows'>
+          <div class='statement'>
+            <img alt="salesforce logo" class="salesforce-logo" src="<%= image_path('salesforce-logo') %>" />
+            <p>© Copyright 2000-2018 salesforce.com, inc. All rights reserved.</p>
+            <p>Various trademarks held by their respective owners.</p>
+            <p>Salesforce.com, inc. The Landmark @ One Market, Suite 300, San Francisco, CA 94105, United States</p>
+          </div>
+          <div class='salesforce-links'>
+            <h4>Salesforce</h4>
+            <ul class='link-list'>
+              <li><a title="Salesforce" target="_blank" href="//www.salesforce.com/">Salesforce</a></li>
+              <li><a title="Salesforce Developers" target="_blank" href="//developer.salesforce.com/">Salesforce Developers</a></li>
+              <li><a title="Salesforce Admins" target="_blank" href="//admin.salesforce.com/">Salesforce Admins</a></li>
+              <li><a title="Trailblazer Community" target="_blank" href="//success.salesforce.com/_ui/core/chatter/groups/GroupProfilePage?g=0F9300000009Nek">Trailblazer Community</a></li>
+              <li><a title="Developer Forums" target="_blank" href="//developer.salesforce.com/forums?dc=Trailhead&amp;feedtype=RECENT&amp;criteria=ALLQUESTIONS&amp;">Developer Forums</a></li>
+            </ul>
+          </div>
+          <div class='site-links'>
+            <h4>Links</h4>
+            <ul class='link-list'>
+              <li><a title="Privacy Statement" target="_blank" href="/privacy_statement?lang=en">Privacy Statement</a></li>
+              <li><a title="Security Statement" target="_blank" href="//www.salesforce.com/company/security.jsp">Security Statement</a></li>
+              <li><a title="Terms of Use" target="_blank" href="/terms?lang=en">Terms of Use</a></li>
+              <li>
+                <a title="Feedback" class="feedback" itemid="ebd396c9-3b7c-43bd-8223-419bc8a1cbeb" target="_blank" href="#">Feedback</a>
+              </li>
+              <li><a title="About Us" target="_blank" href="//www.salesforce.com/company/">About Us</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+
   </body>
 </html>

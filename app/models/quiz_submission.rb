@@ -5,7 +5,7 @@ class QuizSubmission < ApplicationRecord
   # Ensure both all answers are correct and all questions are answered
   #  i.e. a blank answer is incorrect
   def correct?
-    return false unless answers.count == unit.questions.count
+    return false unless !answers.nil? && answers.count == unit.questions.count
 
     answers.each do |question_id, answer_index|
       return false unless answer_is_correct? question_id, answer_index

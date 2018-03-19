@@ -1,39 +1,62 @@
+<div class="unit-container-header">
+  <div class="unit-header">
+    <div class="title">
+      <h1 class="unit-title"><%= @unit.title %></h1>
+      <div class="unit-description"><%= @unit.description %></div>
+    </div>
+  </div>
+</div>
+<div class="unit-background">
+  <div class="unit-content-container">
+    <div class="row">
+      <div class="unit-content">
+        <%= @unit.content =%>
+      </div>
+      <div id="challenge">
+        <div class="quiz">
+          <%= form_tag quiz_submission_index_path do %>
+            <header class="quiz-header">
+              <h2>Quiz</h2>
+            </header>
+            <div class="questions">
+              <% @unit.questions.shuffle.each_with_index do |question, question_index| %>
+                <fieldset class="question">
+                  <legend>
+                    <div class="legend">
+                      <span class="question-number"><%= question_index + 1 %></span>
+                      <span class="question-text"><%= question.question_text %></span>
+                    </div>
+                  </legend>
+                  <div class="answers">
+                    <% question.answers.each_with_index do |answer, answer_index| %>
+                      <div class="radio-button">
+                        <input type="radio" name="quiz_submission[<%= question.id %>]" id="<%= question.id %>_<%= answer_index %>" value="<%= answer_index %>">
+                        <label for="<%= question.id %>_<%= answer_index %>">
+                          <span class="answer-label">
+                            <span class="answer-icon">A</span>
+                            <span class="answer-text">
+                              <%= answer["text"] %>
+                            </span>
+                          </span>
+                        </label>
+                      </div>
+                    <% end %>
+                  </div>
+                </fieldset>
+              <% end %>
+            </div>
+            <footer class="quiz-footer">
+              <div class="quiz-footer-container">
+                <%= hidden_field :unit, :id %>
+                <%= button_tag "Submit Answers" %>
+              </div>
+            </footer>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-<p>
-  <strong>Title:</strong>
-  <%= @unit.title %>
-</p>
- 
-<p>
-  <strong>Description:</strong>
-  <%= @unit.description %>
-</p>
-
-<p>
-  <strong>Time Estimate:</strong>
-  <%= @unit.time_estimate %>
-</p>
-
-<p>
-  <strong>Learning material:</strong>
-  <%= @unit.content %>
-</p>
-
-<h1>Questions</h1>
 
 
-<%= form_tag quiz_submission_index_path do %>
-  <% @unit.questions.shuffle.each do |question| %>
-    <fieldset>
-      <h4><%= question.question_text %></h4>
-        <% question.answers.each_with_index do |answer, idx| %>
-          <div>
-            <input type="radio" name="quiz_submission[<%= question.id %>]" id="<%= question.id %>_<%= idx %>" value="<%= idx %>">
-            <label for="<%= question.id %>_<%= idx %>"><%= answer["text"] %></label>
-          </div>
-        <% end %>
-    </fieldset>
-  <% end %>
-  <%= hidden_field :unit, :id %>
-  <%= submit_tag "Submit Answers" %>
-<% end %>

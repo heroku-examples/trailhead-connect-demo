@@ -1,0 +1,131 @@
+header {
+  background: #fff;
+  border-bottom: 3px solid #00a1df;
+  height: 111px;
+
+  @media (max-width: 1023px) {
+    height: 47px;
+  }
+
+  .non-phone-header-content {
+    @media (max-width: 1023px) {
+      display: none!important;
+    }
+  }
+
+  div.header-content {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 80rem;
+    display: flex;
+
+
+    a {
+      img {
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+      }
+    }
+
+    .header-nav {
+      margin-left: 1rem;
+      margin-top: 1rem;
+    }
+
+    .search {
+      height: 32px;
+      margin: 0 0 10px;
+    }
+
+    nav {
+      display: block;
+
+      ul {
+        height: 2.5rem;
+        display: flex;
+        list-style: none;
+
+        li.active {
+          border-top: 3px solid #00a1df;
+          background: #f7f9fb;
+        }
+
+        a {
+          display: flex;
+          align-content: center;
+          -webkit-box-align: center;
+          align-items: center;
+          -webkit-box-flex: 1;
+          flex-grow: 1;
+          padding: 0 .75rem;
+          border-radius: 0;
+          min-width: 0;
+          color: inherit;
+          font-size: .8125rem;
+        }
+      }
+    }
+
+    .header-login {
+      margin-left: auto;
+
+
+      button {
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        text-decoration: none;
+        position: relative;
+        display: inline-block;
+        padding: .5rem 1rem;
+        background-color: #048149;
+        background: #4c8b2b;
+        box-shadow: 0 2px 0 #02502d;
+        background-clip: border-box;
+        border: 1px solid transparent;
+        border-radius: .25rem;
+        font-size: .75rem;
+        font-weight: 700;
+        line-height: 1.3;
+        color: #fff;
+        -webkit-appearance: none;
+        white-space: normal;
+        user-select: none;
+        transition: color .05s linear,background-color .05s linear;
+      }
+
+      .header-profile {
+        float: right;
+        font-size: .8125rem;
+        margin-top: .5rem;
+
+        .header-profile-info {
+          vertical-align: middle;
+          display: inline-block;
+          margin-right: .5rem;
+
+          .header-profile-name {
+            line-height: 1rem;
+            font-weight: 700;
+            color: #363636;
+            width: 100%;
+            text-align: right;
+            text-decoration: none;
+          }
+
+          .header-profile-data {
+            color: #363636;
+          }
+        }
+
+        .header-profile-avatar {
+          display: inline-block;
+          position: relative;
+          width: 45px;
+          height: 45px;
+        }
+      }
+    }
+  }
+}

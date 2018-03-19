@@ -1,0 +1,79 @@
+footer {
+  background: #fff;
+  padding: 50px;
+  font-size: 14px;
+  line-height: 20px;
+  box-sizing: border-box;
+  position: relative;
+}
+
+footer .container {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0;
+  
+  @media (min-width: 1200px) {
+    width: 1170px;
+  }
+
+  p {
+    color: #707070;
+  }
+
+  h4 {
+    text-transform: uppercase;
+    color: #004061;
+    font-size: 18px;
+    letter-spacing: 2px;
+    font-weight: 700;
+    margin: 10px 0;
+  }
+
+  li {
+    color: #707070;
+  }
+
+  .statement {
+    width: 28%;
+
+    p {
+      margin: 20px 0;
+    }
+  }
+
+  .salesforce-links {
+    width: 24%;
+  }
+
+  .link-list {
+    margin: 0;
+    list-style: none;
+    font-size: 16px;
+
+    li {
+      margin: 30px 0;
+    }
+  }
+  
+  .column, .salesforce-links, .site-links, .statement {
+    margin: 0;
+    padding-left: 60px;
+  }
+  
+  .statement:first-child {
+    padding-left: 0;
+  }
+  
+  .statement .salesforce-logo {
+    width: 72px;
+  }
+
+  .footer-rows {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
+
+

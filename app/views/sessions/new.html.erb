@@ -2,7 +2,9 @@
 <%= form_tag sessions_path do %>
   <ol>
     <% @users.shuffle.each do |user| %>
-      <li><%= submit_tag user.name %></li>
+      <li style="list-style-type: none; display: inline-block; vertical-align: top;">
+        <input width="250px" type="image" name="user[name]" value="<%= user.name %>" alt="<%= user.name %>" src="<%= path_to_image(user.image_url) %>">
+      </li>
     <% end %>
   </ol>
 <% end %>

@@ -9,68 +9,68 @@
 User.create([
   {
     name: 'Astro Nomical',
-    description: 'Community & Inclusion',
+    description: 'Curious and always learning, Astro is always up for an adventure on the trail.',
     pronoun: 'they',
-    image_url: ''
+    image_url: 'Astro.png'
   },
   {
     name: 'SaaSy',
-    description: 'The Original',
+    description: 'Philosophy: Success. Not Software.',
     pronoun: 'they',
-    image_url: ''
+    image_url: 'Saasy.png'
   },
   {
     name: 'Codey',
-    description: 'Developers',
+    description: 'Codey likes to build things—he is a maker.',
     pronoun: 'he',
-    image_url: ''
+    image_url: 'Codey.png'
   },
   {
     name: 'Cloudy',
-    description: 'Admins',
+    description: 'Tech-savvy and smart, Cloudy builds innovative apps with the cloud.',
     pronoun: 'she',
-    image_url: ''
+    image_url: 'Cloudy.png'
   },
   {
     name: 'Hootie McOwlface',
-    description: 'Credentials',
+    description: 'Wise. Has his nose in a book most of the time.',
     pronoun: 'he',
-    image_url: ''
+    image_url: 'Hootie.png'
   },
   {
     name: 'Einstein',
-    description: 'Einstein',
+    description: 'Quick on his feet. Humble brilliance. Gets smarter with every interaction.',
     pronoun: 'he',
-    image_url: ''
+    image_url: 'Einstein.png'
   },
   {
     name: 'Earnie Badger',
-    description: 'Trailhead',
+    description: 'Quick and very clever. Grabbing badges as fast as she can.',
     pronoun: 'she',
-    image_url: ''
+    image_url: 'Earnie.png'
   },
   {
     name: 'Appy',
-    description: 'ISV / Partners',
+    description: 'An energetic and relatable bobcat, Appy is your guide to the Partner Ecosystem.',
     pronoun: 'she',
-    image_url: ''
+    image_url: 'Appy.png'
   },
   {
     name: 'Meta Moose',
-    description: 'Engineering',
+    description: 'Meta Moose is a big picture thinker; he truly sees the forest for the trees.',
     pronoun: 'he',
-    image_url: ''
+    image_url: 'Moose.png'
   },
   {
     name: 'Koa the Dog',
-    description: 'Love, Longevity, Koa Club',
+    description: 'Incredibly resourceful, Koa the Dog truly represents what it means to have a friend by your side.',
     pronoun: 'he',
-    image_url: ''
+    image_url: 'Koa.png'
   },
   {
     name: 'Blaze',
-    description: 'Cloud Services',
+    description: 'Blaze is your faithful, trusted companion, with you from the very start of your journey.',
     pronoun: 'she',
-    image_url: ''
+    image_url: 'Blaze.png'
   },
 ])
