@@ -28,7 +28,7 @@ unit3 = Unit.create(title: 'I\'m a Heroku pro',
 unit3.create_badge({name: 'Heroku Advanced', image_url: 'https://placeimg.com/100/100/animals'})
 
 unit4 = Unit.create(title: 'General Salesforce Knowledge',
-                    description: 'Answer some general Salesforce trivia.',
+                    description: 'General trivia about the history of Salesforce.',
                     time_estimate: 1,
                     content: 'This is an example of the unit training material.'
                   )
@@ -141,7 +141,7 @@ questions_for_unit4 = Question.create([
       { text: 'Astro', is_correct: false },
       { text: 'SaaSy', is_correct: true },
       { text: 'Cody', is_correct: false },
-      { text: 'Owly McOwlface', is_correct: false }
+      { text: 'Hootie McOwlface', is_correct: false }
     ],
   },
   {
