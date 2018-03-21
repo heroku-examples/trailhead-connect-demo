@@ -36,7 +36,7 @@
             <div class="header-profile">
               <div class="header-profile-info">
                 <div class="header-profile-name"><%= @current_user.name %> (<a href="<%= logout_path %>">Logout</a>)</div>
-                <div class="header-profile-data">7 Badges</div>
+                <div class="header-profile-data"><%= pluralize(@current_user.earned_badges.count, 'Badge') %></div>
               </div>
               <div class="header-profile-avatar">
                 <img src="<%= image_path(@current_user.avatar_image_url) %>">
