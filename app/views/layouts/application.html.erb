@@ -39,7 +39,7 @@
                 <div class="header-profile-data">7 Badges</div>
               </div>
               <div class="header-profile-avatar">
-                <img src="<%= image_path('avatar-appy.png') %>">
+                <img src="<%= image_path(@current_user.avatar_image_url) %>">
               </div>
             </div>
           <% else %>
