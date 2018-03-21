@@ -158,6 +158,10 @@ header {
           position: relative;
           width: 45px;
           height: 45px;
+
+          img {
+            border-radius: 50%;
+          }
         }
       }
     }
