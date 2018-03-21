@@ -6,6 +6,8 @@ class UnitsController < ApplicationController
   end
 
   def show
+    @submitted_answers = nil
+    @incorrect_questions = []
     @unit = Unit.find(params[:id])
   end
 end

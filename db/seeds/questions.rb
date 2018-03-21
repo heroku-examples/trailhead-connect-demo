@@ -6,28 +6,28 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-unit1 = Unit.create(title: 'Wat? Heroku?',
-                    description: 'Choose this if you\'ve never heard of Heroku.',
+unit1 = Unit.create(title: 'Introduction to Heroku',
+                    description: 'Learn what Heroku is and how to try it out.',
                     time_estimate: 1,
                     content: 'This is an example of the unit training material.'
                   )
 unit1.create_badge({name: 'Heroku Beginner', image_url: 'https://placeimg.com/100/100/animals'})
 
-unit2 = Unit.create(title: 'I know about Heroku',
-                    description: 'Choose this if you know about Heroku but haven\'t used it much.',
+unit2 = Unit.create(title: 'Heroku Fundamentals',
+                    description: 'Expand your knowledge of Heroku, and learn why so many developers love it.',
                     time_estimate: 1,
                     content: 'This is an example of the unit training material.'
                   )
 unit2.create_badge({name: 'Heroku Intermediate', image_url: 'https://placeimg.com/100/100/animals'})
 
-unit3 = Unit.create(title: 'I\'m a Heroku pro',
-                    description: 'Choose this if you\'re comfortable developing applications on Heroku.',
+unit3 = Unit.create(title: 'Heroku Power Features',
+                    description: 'Solidify your advanced knowledge of Heroku features.',
                     time_estimate: 1,
                     content: 'This is an example of the unit training material.'
                   )
 unit3.create_badge({name: 'Heroku Advanced', image_url: 'https://placeimg.com/100/100/animals'})
 
-unit4 = Unit.create(title: 'General Salesforce Knowledge',
+unit4 = Unit.create(title: 'Salesforce Trivia',
                     description: 'General trivia about the history of Salesforce.',
                     time_estimate: 1,
                     content: 'This is an example of the unit training material.'
@@ -46,17 +46,17 @@ questions_for_unit1 = Question.create([
     ],
   },
   {
-    question_text: 'Heroku focuses on...',
+    question_text: 'Heroku\'s goal is to...',
     unit: unit1,
     answers: [
-      { text: 'increasing developer and team productivity', is_correct: false },
-      { text: 'improving a developer\'s experience creating and deploying software', is_correct: false },
-      { text: 'reducing the time to go from idea to live URL', is_correct: false },
+      { text: 'increase developer and team productivity', is_correct: false },
+      { text: 'improve a developer\'s experience creating and deploying software', is_correct: false },
+      { text: 'reduce the time to go from idea to live URL', is_correct: false },
       { text: 'all of the above', is_correct: true }
     ],
   },
   {
-    question_text: 'To make it easy to try Heroku, there is a free plan for...',
+    question_text: 'To make Heroku easy to try, there is a free plan for...',
     unit: unit1,
     answers: [
       { text: 'running applications', is_correct: false },
