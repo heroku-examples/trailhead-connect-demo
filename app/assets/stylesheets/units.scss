@@ -227,6 +227,7 @@ div.tiles-container {
                     margin: 0;
                     padding: .5rem 1.5rem;
                     display: flex;
+                    cursor: pointer;
 
                     .answer-label {
                       padding: 0;
@@ -259,7 +260,34 @@ div.tiles-container {
                         word-break: break-word;
                       }
                     }
+
+                    // hover states for quiz answers
+                    &:hover {
+                      background: #f6fbff;
+
+                      .answer-icon {
+                        border-color: #0070d2;
+                        color: #0070d2;
+                      }
+                    }
                   }
+
+                  // selected states for quiz answers
+                  input[type=radio]:checked{
+
+                    & + label {
+                      background: #f6fbff;
+
+                      .answer-icon {
+                        border-color: #0070d2;
+                        background: no-repeat #0070d2 center center;
+                        background-image: image-url('checkmark.svg');
+                        background-size: 22px 15px;
+                        text-indent: -9999em;
+                      }
+                    }
+                  }
+
                 }
               }
             }
