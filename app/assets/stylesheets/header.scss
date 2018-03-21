@@ -111,7 +111,6 @@ header {
         display: inline-block;
         padding: .5rem 1rem;
         background-color: #048149;
-        background: #4c8b2b;
         box-shadow: 0 2px 0 #02502d;
         background-clip: border-box;
         border: 1px solid transparent;
@@ -124,6 +123,10 @@ header {
         white-space: normal;
         user-select: none;
         transition: color .05s linear,background-color .05s linear;
+
+        &:hover {
+          background-color: #03683b;
+        }
       }
 
       .header-profile {
