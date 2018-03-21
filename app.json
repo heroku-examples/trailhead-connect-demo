@@ -1,6 +1,15 @@
 {
   "name": "heroku-trailhead-demo",
+  "repository": "https://github.com/heroku/heroku-trailhead-demo",
+  "keywords": [
+    "demo",
+    "trailhead",
+    "heroku",
+    "heroku connect"
+  ],
+  "logo": "https://github.com/heroku/heroku-trailhead-demo/blob/master/app/assets/images/trailhead-logo-demo.svg?raw=true",
   "scripts": {
+    "postdeploy": "bin/rails db:seed"
   },
   "env": {
     "LANG": {
@@ -26,8 +35,8 @@
     "web": {
       "quantity": 1
     },
-    "worker": {
-      "quantity": 1
+    "release": {
+      "quantity": 0
     }
   },
   "addons": [
