@@ -273,7 +273,7 @@ div.tiles-container {
                 align-items: center;
 
                 button {
-                  padding: .75rem 1rem;
+                  padding: .75rem 1rem .65rem;
                   font-weight: 700;
                   font-size: 1rem;
                   line-height: 1.3;
@@ -286,9 +286,13 @@ div.tiles-container {
                   user-select: none;
                   transition: color .05s linear,background-color .05s linear;
                   color: #fff;
-                  background: #4c8b2b;
+                  background-color: #048149;
                   -webkit-box-shadow: 0 2px 0 #336c16;
                   box-shadow: 0 2px 0 #336c16;
+
+                  &:hover {
+                    background-color: #03683b;
+                  }
                 }
 
                 button[disabled] {
