@@ -1,10 +1,21 @@
-<h1>Choose a character to log in as</h1>
-<%= form_tag sessions_path do %>
-  <ol>
-    <% @users.shuffle.each do |user| %>
-      <li style="list-style-type: none; display: inline-block; vertical-align: top;">
-        <input width="250px" type="image" name="user[name]" value="<%= user.name %>" alt="<%= user.name %>" src="<%= path_to_image(user.image_url) %>">
-      </li>
+<section class="login-character">
+  <div class="content-container">
+    <h1>Choose a character to log in as</h1>
+    <%= form_tag sessions_path do %>
+      <ol class="character-list">
+        <% @users.shuffle.each do |user| %>
+          <li style="list-style-type: none; display: inline-block; vertical-align: top;">
+            <input type="image" name="user[name]" value="<%= user.name %>" alt="<%= user.name %>" src="<%= path_to_image(user.image_url) %>">
+            <div class="character-info">
+              <h2>
+                <%= user.name %> 
+                <span class="character-pronoun">(<%= user.pronoun %>)</span>
+              </h2>
+              <p class="character-desc"><%= user.description %></p>
+            </div>
+          </li>
+        <% end %>
+      </ol>
     <% end %>
-  </ol>
-<% end %>
+  </div>
+</section>
