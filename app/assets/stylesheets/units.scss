@@ -205,6 +205,10 @@ div.tiles-container {
                   display: block;
                   border-radius: 0;
                   background-clip: padding-box;
+
+                  &:hover {
+                    color:#f6fbff;
+                  }
                   
                   input {
                     width: 1px;
