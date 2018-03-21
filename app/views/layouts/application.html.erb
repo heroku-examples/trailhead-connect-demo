@@ -22,11 +22,11 @@
           <div class="search"></div>
           <nav>
             <ul>
-              <li class="active">
-                <a href="/">Home</a>
+              <li class="<%= active_for(path: root_path) %>">
+                <a href="<%= root_path %>">Home</a>
               </li>
-              <li>
-                <a href="/units">Units</a>
+              <li class="<%= active_for(controller: 'units') %>">
+                <a href="<%= units_path %>">Units</a>
               </li>
             </ul>
           </nav>
