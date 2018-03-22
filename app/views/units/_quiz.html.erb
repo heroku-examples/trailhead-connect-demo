@@ -4,7 +4,7 @@
   </header>
   <div class="questions">
     <% unit.questions.shuffle.each_with_index do |question, question_index| %>
-      <fieldset class="question <%= incorrect_questions.include? question.id ? 'incorrect' : '' %>">
+      <fieldset class="question">
         <legend>
           <div class="legend">
             <span class="question-number"><%= question_index + 1 %></span>
@@ -14,8 +14,8 @@
         <div class="answers">
           <% question.answers.each_with_index do |answer, answer_index| %>
             <div class="radio-button" onclick="document.getElementById('<%= "quiz_submission_#{question.id}_#{answer_index}" %>').checked = true;">
-              <%= radio_button_tag "quiz_submission[#{question.id}]", answer_index, submitted_answers && submitted_answers.key?(question.id) && submitted_answers[question.id] == answer_index %>
-              <label for="<%= question.id %>_<%= answer_index %>">
+              <%= radio_button_tag "quiz_submission[#{question.id}]", answer_index, submitted_answers && submitted_answers.key?(question.id.to_s) && submitted_answers[question.id.to_s].to_i == answer_index %>
+              <label for="<%= question.id %>_<%= answer_index %>" class="<%= incorrect_questions.include?(question.id) && submitted_answers[question.id.to_s].to_i == answer_index ? 'incorrect' : '' %>">
                 <span class="answer-label">
                   <span class="answer-icon"><%= ["A", "B", "C", "D"][answer_index] %></span>
                   <span class="answer-text">

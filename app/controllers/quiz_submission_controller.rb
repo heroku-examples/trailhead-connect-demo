@@ -12,7 +12,7 @@ class QuizSubmissionController < ApplicationController
 
     incorrect_question_ids = submission.grade
 
-    if incorrect_questions.empty?
+    if incorrect_question_ids.empty?
       badge = Badge.find_by(unit: @unit)
       EarnedBadge.create(
         user: @current_user,
@@ -22,11 +22,10 @@ class QuizSubmissionController < ApplicationController
 
       redirect_to units_url, notice: "Good job, you\'ve earned the #{badge.name} badge!"
     else
-      # redirect_to unit_url(unit), alert: 'One or more of your answers are incorrect. Please try again!'
-      @submitted_answers = submission.answers
-      @incorrect_questions = incorrect_question_ids
-      flash[:alert] = 'One or more of your answers are incorrect. Please try again!'
-      render "unit/show"
+      session[:unit] = @unit.id
+      session[:submitted_answers] = submission.answers
+      session[:incorrect_questions] = incorrect_question_ids
+      redirect_to unit_url(@unit), alert: 'One or more of your answers are incorrect. Please try again!'
     end
   end
 end

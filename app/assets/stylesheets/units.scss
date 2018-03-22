@@ -286,8 +286,18 @@ div.tiles-container {
                         text-indent: -9999em;
                       }
                     }
-                  }
 
+                    & + label.incorrect {
+                      background: #ffd8d8;
+                      .answer-icon {
+                        border-color: red;
+                        background: no-repeat red center center;
+                        background-image: image-url('checkmark.svg');
+                        background-size: 22px 15px;
+                        text-indent: -9999em;
+                      }
+                    }
+                  }
                 }
               }
             }

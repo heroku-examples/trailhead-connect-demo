@@ -2,17 +2,22 @@ class QuizSubmission < ApplicationRecord
   belongs_to :user
   belongs_to :unit
 
-  # Ensure both all answers are correct and all questions are answered
-  #  i.e. a blank answer is incorrect
-  def correct?
-    return false unless answers && answers.count == unit.questions.count
+  # Return an array of the question ID of any questions with an incorrect answer.
+  #  a blank answer is considered incorrect
+  def grade
+    incorrect_question_ids = []
 
-    # TODO: return an array of incorrect answers?
-    answers.each do |question_id, answer_index|
-      return false unless answer_is_correct? question_id, answer_index
+    # Add skipped questions to array
+    unit.questions.each do |q|
+      incorrect_question_ids << q.id unless answers.has_key?(q.id.to_s)
     end
 
-    true
+    # Add incorrectly answered questions to the array
+    answers.each do |question_id, answer_index|
+      incorrect_question_ids << question_id.to_i unless answer_is_correct? question_id, answer_index
+    end
+
+    return incorrect_question_ids
   end
 
   private
