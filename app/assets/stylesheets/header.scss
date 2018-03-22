@@ -4,7 +4,7 @@ header {
   height: 101px;
 
   @media (max-width: 1023px) {
-    height: 47px;
+    height: 55px;
   }
 
   .non-phone-header-content {
@@ -126,6 +126,10 @@ header {
 
         &:hover {
           background-color: #03683b;
+        }
+
+        @media (max-width: 1023px) {
+          margin-top: .5rem;
         }
       }
 
