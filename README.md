@@ -46,5 +46,5 @@ Docker is required for dev setup. It's easy to install [from here](https://www.d
 
 ### Production Setup
 
-1. [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)  
+1. [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/heroku/heroku-trailhead-demo)  
 This will deploy the app with a Heroku Postgres add-on, create the schema in the database, and seed the database with unit, question, and user data.
