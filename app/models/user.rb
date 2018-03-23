@@ -13,7 +13,7 @@ class User < ApplicationRecord
     User.connection.execute <<~SQL
       INSERT
         INTO salesforce.contact (firstname, lastname, description, photourl)
-        VALUES (#{firstname}, #{lastname}, #{description}, #{image_url});
+        VALUES ('#{firstname}', '#{lastname}', '#{description}', '#{image_url}');
     SQL
   end
 
@@ -23,10 +23,10 @@ class User < ApplicationRecord
     User.connection.execute <<~SQL
       UPDATE salesforce.contact
         SET
-          salesforce.contact.firstname    = #{firstname}
-          salesforce.contact.lastname     = #{lastname}
-          salesforce.contact.description  = #{description}
-          salesforce.contact.photourl     = #{image_url}
+          salesforce.contact.firstname    = '#{firstname}'
+          salesforce.contact.lastname     = '#{lastname}'
+          salesforce.contact.description  = '#{description}'
+          salesforce.contact.photourl     = '#{image_url}'
         WHERE salesforce.contact.trailhead_user_id__c = #{id};
     SQL
   end
