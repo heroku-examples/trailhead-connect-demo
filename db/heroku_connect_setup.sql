@@ -34,7 +34,7 @@ BEGIN;
         SET
           badge_id  = NEW.tailhead_badge_id__c,
           user_id   = NEW.trailhead_user_id__c
-        WHERE id = NEW.trailhead_earned_badge_id__c
+        WHERE id = NEW.trailhead_earned_badge_id__c;
       RETURN NEW;
     END;
   $$ LANGUAGE plpgsql;
