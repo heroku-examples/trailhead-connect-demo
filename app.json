@@ -13,19 +13,24 @@
   },
   "env": {
     "LANG": {
-      "required": true
+      "required": true,
+      "value": "en_US.UTF-8"
     },
     "RACK_ENV": {
-      "required": true
+      "required": true,
+      "value": "production"
     },
     "RAILS_ENV": {
-      "required": true
+      "required": true,
+      "value": "production"
     },
     "RAILS_LOG_TO_STDOUT": {
-      "required": true
+      "required": true,
+      "value": "enabled"
     },
     "RAILS_SERVE_STATIC_FILES": {
-      "required": true
+      "required": true,
+      "value": "enabled"
     },
     "SECRET_KEY_BASE": {
       "generator": "secret"
