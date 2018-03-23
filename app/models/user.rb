@@ -12,8 +12,8 @@ class User < ApplicationRecord
 
     User.connection.execute <<~SQL
       INSERT
-        INTO salesforce.contact (firstname, lastname, description, photourl)
-        VALUES ('#{firstname}', '#{lastname}', '#{description}', '#{image_url}');
+        INTO salesforce.contact (trailhead_user_id__c, firstname, lastname, description, photourl)
+        VALUES (#{id}, '#{firstname}', '#{lastname}', '#{description}', '#{image_url}');
     SQL
   end
 
