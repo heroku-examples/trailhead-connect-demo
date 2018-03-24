@@ -65,3 +65,6 @@ This will deploy the app with a Heroku Postgres add-on, create the schema in the
 - [ ] Add to setup instructions of BRK and README create sfdc dev edition org, create custom fields, create custom objects (unmanaged package?)
 - [ ] Add to setup instructions of BRK and README steps to configure Heroku Connect using JSON settings import
 - [ ] Add Heroku Connect add on to app.json (check with Maciek if ok)
+- [ ] Style unit tiles
+- [ ] Create dataclip showing badge count by user
+- [ ] Figure out optional Private/Shield Spaces and Heroku Flow demo extensions
