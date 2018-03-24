@@ -48,3 +48,20 @@ Docker is required for dev setup. It's easy to install [from here](https://www.d
 
 1. [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/heroku/heroku-trailhead-demo)  
 This will deploy the app with a Heroku Postgres add-on, create the schema in the database, and seed the database with unit, question, and user data.
+
+-----
+
+## TODO
+
+- [ ] Fix quiz page circles on mobile
+- [ ] Check for and fix any other mobile display issues
+- [ ] Change image_url sync to photourl to a custom field (formula with IMAGE())
+- [ ] Add avatar_image_url as custom field to contact?
+- [ ] Show interstitial after quiz submit with quiz result (instead of flash)
+- [ ] Create and add badge for each unit
+- [ ] Finish writing quiz questions for each unit
+- [ ] Add educational material for each unit
+- [ ] Customize Salesforce Contact list view, Contact show view (show image_url?), nav bar, and app launcher
+- [ ] Add to setup instructions of BRK and README create sfdc dev edition org, create custom fields, create custom objects (unmanaged package?)
+- [ ] Add to setup instructions of BRK and README steps to configure Heroku Connect using JSON settings import
+- [ ] Add Heroku Connect add on to app.json (check with Maciek if ok)
