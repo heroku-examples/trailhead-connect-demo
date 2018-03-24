@@ -10,7 +10,7 @@ BEGIN;
                           ELSE NEW.lastname
                           END),
           description = NEW.description,
-          image_url   = NEW.photourl
+          image_url   = NEW.image_url__c
         WHERE id = NEW.trailhead_user_id__c;
       RETURN NEW;
     END;
@@ -24,7 +24,7 @@ BEGIN;
     AFTER UPDATE OF
       name,
       description,
-      photourl
+      image_url__c
     ON salesforce.contact
     FOR EACH ROW
     WHEN (get_xmlbinary()::text != 'base64'::text)

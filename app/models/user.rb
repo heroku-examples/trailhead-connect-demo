@@ -17,7 +17,7 @@ class User < ApplicationRecord
 
     User.connection.execute <<~SQL
       INSERT
-        INTO salesforce.contact (trailhead_user_id__c, firstname, lastname, description, photourl)
+        INTO salesforce.contact (trailhead_user_id__c, firstname, lastname, description, image_url__c)
         VALUES (#{id}, '#{firstname}', '#{lastname}', '#{description}', '#{image_url}');
     SQL
   end
@@ -31,7 +31,7 @@ class User < ApplicationRecord
           salesforce.contact.firstname    = '#{firstname}'
           salesforce.contact.lastname     = '#{lastname}'
           salesforce.contact.description  = '#{description}'
-          salesforce.contact.photourl     = '#{image_url}'
+          salesforce.contact.image_url__c = '#{image_url}'
         WHERE salesforce.contact.trailhead_user_id__c = #{id};
     SQL
   end
