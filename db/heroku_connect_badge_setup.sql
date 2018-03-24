@@ -1,28 +1,28 @@
 BEGIN;
 
-  CREATE OR REPLACE FUNCTION sync_to_trailhed_earned_badges_proc() RETURNS trigger AS $$
+  CREATE OR REPLACE FUNCTION sync_to_trailhed_badges_proc() RETURNS trigger AS $$
     BEGIN
-      RAISE NOTICE 'syncing to trailhead earned_badges table badge ID %', NEW.badge_id;
-      UPDATE earned_badges
+      RAISE NOTICE 'syncing to trailhead badges table badge ID %', NEW.id;
+      UPDATE badges
         SET
-          badge_id  = NEW.tailhead_badge_id__c,
-          user_id   = NEW.trailhead_user_id__c
-        WHERE id = NEW.trailhead_earned_badge_id__c;
+          name      = NEW.name,
+          image_url = NEW.image_url__c
+        WHERE id = NEW.trailhead_badge_id__c;
       RETURN NEW;
     END;
   $$ LANGUAGE plpgsql;
 
   DROP TRIGGER
-    IF EXISTS sync_to_trailhed_earned_badges_trigger
-    ON salesforce.earned_badge;
+    IF EXISTS sync_to_trailhed_badges_trigger
+    ON salesforce.badge;
   
-  CREATE TRIGGER sync_to_trailhed_earned_badges_trigger
+  CREATE TRIGGER sync_to_trailhed_badges_trigger
     AFTER UPDATE OF
-      badge_id,
-      user_id
-    ON salesforce.earned_badge
+      name,
+      image_url__c
+    ON salesforce.badge__c
     FOR EACH ROW
     WHEN (get_xmlbinary()::text != 'base64'::text)
-    EXECUTE PROCEDURE sync_to_trailhed_earned_badges_proc();
+    EXECUTE PROCEDURE sync_to_trailhed_badges_proc();
 
 END;
