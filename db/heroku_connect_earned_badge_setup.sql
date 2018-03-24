@@ -6,7 +6,7 @@ BEGIN;
       UPDATE earned_badges
         SET
           badge_id = (SELECT trailhead_badge_id__c FROM salesforce.badge__c WHERE sfid = NEW.badge__c),
-          user_id  = (SELECT trailhead_user_id__c FROM salesforce.contact WHERE sfid = NEW.user__c)
+          user_id  = (SELECT trailhead_user_id__c FROM salesforce.contact WHERE sfid = NEW.contact__c)
         WHERE id = NEW.trailhead_earned_badge_id__c;
       RETURN NEW;
     END;
