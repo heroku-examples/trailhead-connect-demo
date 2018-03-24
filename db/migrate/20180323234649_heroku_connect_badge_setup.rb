@@ -8,7 +8,7 @@ class HerokuConnectBadgeSetup < ActiveRecord::Migration[5.1]
   def down
     if Badge.salesforce_schema_exists?
       execute "DROP FUNCTION sync_to_trailhead_badges_proc CASCADE;"
-      execute "DROP TRIGGER IF EXISTS sync_to_trailhead_badges_trigger ON salesforce.badge;"
+      execute "DROP TRIGGER IF EXISTS sync_to_trailhead_badges_trigger ON salesforce.badge__c;"
     end
   end
 end
