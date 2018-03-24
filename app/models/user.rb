@@ -8,7 +8,12 @@ class User < ApplicationRecord
   after_destroy_commit  :remove_user_from_sfdc, if: :salesforce_schema_exists?
 
   def add_user_to_sfdc
-    firstname, lastname = name.split(' ', 2)
+    if name.include?(' ')
+      firstname, lastname = name.split(' ', 2)
+    else
+      firstname = nil
+      lastname = name
+    end
 
     User.connection.execute <<~SQL
       INSERT

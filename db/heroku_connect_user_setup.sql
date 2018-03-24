@@ -5,7 +5,10 @@ BEGIN;
       RAISE NOTICE 'syncing to trailhead users table: %', NEW.name;
       UPDATE users
         SET
-          name        = NEW.firstname || ' ' || NEW.lastname,
+          name        = (CASE
+                          WHEN NEW.firstname <> '' THEN NEW.firstname || ' ' || NEW.lastname
+                          ELSE NEW.lastname
+                          END),
           description = NEW.description,
           image_url   = NEW.photourl
         WHERE id = NEW.trailhead_user_id__c;
