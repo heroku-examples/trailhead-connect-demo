@@ -7,8 +7,8 @@ class HerokuConnectUserSetup < ActiveRecord::Migration[5.1]
 
   def down
     if User.salesforce_schema_exists?
-      execute "  DROP TRIGGER IF EXISTS sync_to_trailhead_users_trigger ON salesforce.contact;"
-      execute "DROP FUNCTION sync_to_trailhead_users_proc;"
+      execute "DROP FUNCTION sync_to_trailhead_users_proc CASCADE;"
+      execute "DROP TRIGGER IF EXISTS sync_to_trailhead_users_trigger ON salesforce.contact;"
     end
   end
 end
