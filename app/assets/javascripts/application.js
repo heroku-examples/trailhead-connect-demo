@@ -13,3 +13,22 @@
 //= require rails-ujs
 //= require turbolinks
 //= require_tree .
+
+
+function alertFade() {
+  var alerts = document.getElementsByClassName("alert");
+
+  window.setTimeout(function() {
+    Array.prototype.forEach.call(alerts, function(el) {
+      el.classList.add("in")
+    })
+  }, 250)
+
+  window.setTimeout(function() {
+    Array.prototype.forEach.call(alerts, function(el) {
+      el.classList.remove("in");
+    })
+  }, 4000)
+}
+
+document.addEventListener('turbolinks:load', alertFade)
