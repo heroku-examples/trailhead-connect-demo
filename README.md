@@ -51,20 +51,24 @@ This will deploy the app with a Heroku Postgres add-on, create the schema in the
 
 -----
 
-## TODO
+## TODO for TDX 18
 
 - [ ] Fix quiz page circles on mobile
 - [ ] Check for and fix any other mobile display issues
-- [x] Change image_url sync to photourl to a custom field (formula with IMAGE())
-- [x] Add avatar_image_url as custom field to contact?
-- [ ] Show interstitial after quiz submit with quiz result (instead of flash)
-- [ ] Create and add badge for each unit
-- [ ] Finish writing quiz questions for each unit
-- [ ] Add educational material for each unit
-- [ ] Customize Salesforce Contact list view, Contact show view (show image_url?), nav bar, and app launcher
-- [ ] Add to setup instructions of BRK and README create sfdc dev edition org, create custom fields, create custom objects (unmanaged package?)
-- [ ] Add to setup instructions of BRK and README steps to configure Heroku Connect using JSON settings import
-- [ ] Add Heroku Connect add on to app.json (check with Maciek if ok)
-- [ ] Style unit tiles
+- [ ] Style unit tiles on `units#index` view
+- [ ] Create badge for each unit
+- [ ] Add badge for each unit
+- [ ] @crcastle Show interstitial after quiz submit with quiz result (instead of flash)
+- [ ] @crcastle Finish writing quiz questions for each unit
+- [ ] @crcastle Add educational material for each unit
+- [ ] @crcastle Customize Salesforce org Home tab, Contact list view, Contact show view (show image_url?), nav bar, and app launcher
+- [ ] @crcastle Figure out optional Private/Shield Spaces and Heroku Flow demo extensions
 - [x] Create dataclip showing badge count by user
-- [ ] Figure out optional Private/Shield Spaces and Heroku Flow demo extensions
+- [x] Add avatar_image_url as custom field to contact?
+- [x] Change image_url sync to photourl to a custom field (formula with IMAGE())
+
+## TODO for post-TDX 18 Demoers
+
+- [ ] Add Heroku Connect add on to app.json (check with Maciek if ok)
+- [ ] Add to setup instructions of BRK and README steps to configure Heroku Connect using JSON settings import
+- [ ] Add to setup instructions of BRK and README create sfdc dev edition org, create custom fields, create custom objects (unmanaged package?)
