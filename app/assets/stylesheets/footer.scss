@@ -33,28 +33,6 @@ footer .container {
   li {
     color: #707070;
   }
-
-  .statement {
-    width: 28%;
-
-    p {
-      margin: 20px 0;
-    }
-  }
-
-  .salesforce-links {
-    width: 24%;
-  }
-
-  .link-list {
-    margin: 0;
-    list-style: none;
-    font-size: 16px;
-
-    li {
-      margin: 30px 0;
-    }
-  }
   
   .column, .salesforce-links, .site-links, .statement {
     margin: 0;
@@ -67,6 +45,57 @@ footer .container {
   
   .statement .salesforce-logo {
     width: 72px;
+  }
+
+  .statement {
+    width: 28%;
+
+    p {
+      margin: 20px 0;
+    }
+
+    @media (max-width: 900px) {
+      order: 3;
+      width: 100%;
+      margin-top: 30px;
+    }
+  }
+
+  .salesforce-links {
+    width: 24%;
+
+    @media (max-width: 900px) {
+      order: 1;
+      width: 50%;
+      padding-left: 0;
+    }
+
+    @media (max-width: 450px) {
+      width: 100%;
+    }
+  }
+
+  .site-links {
+
+    @media (max-width: 900px) {
+      order: 2;
+      width: 50%;
+    }
+
+    @media (max-width: 450px) {
+      width: 100%;
+      padding-left: 0;
+    }
+  }
+
+  .link-list {
+    margin: 0;
+    list-style: none;
+    font-size: 16px;
+
+    li {
+      margin: 30px 0;
+    }
   }
 
   .footer-rows {
