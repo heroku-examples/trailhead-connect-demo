@@ -11,28 +11,28 @@ unit1 = Unit.create(title: 'Introduction to Heroku',
                     time_estimate: 1,
                     content: 'This is an example of the unit training material.'
                   )
-unit1.create_badge({name: 'Heroku Beginner', image_url: 'https://placeimg.com/100/100/animals'})
+unit1.create_badge({name: 'Heroku Beginner', image_url: '/assets/badge_heroku_intro.png'})
 
 unit2 = Unit.create(title: 'Heroku Fundamentals',
                     description: 'Expand your knowledge of Heroku, and learn why so many developers love it.',
                     time_estimate: 1,
                     content: 'This is an example of the unit training material.'
                   )
-unit2.create_badge({name: 'Heroku Intermediate', image_url: 'https://placeimg.com/100/100/animals'})
+unit2.create_badge({name: 'Heroku Intermediate', image_url: '/assets/badge_heroku_fundamentals.png'})
 
 unit3 = Unit.create(title: 'Heroku Power Features',
                     description: 'Solidify your advanced knowledge of Heroku features.',
                     time_estimate: 1,
                     content: 'This is an example of the unit training material.'
                   )
-unit3.create_badge({name: 'Heroku Advanced', image_url: 'https://placeimg.com/100/100/animals'})
+unit3.create_badge({name: 'Heroku Advanced', image_url: '/assets/badge_power_features.png'})
 
 unit4 = Unit.create(title: 'Salesforce Trivia',
                     description: 'General trivia about the history of Salesforce.',
                     time_estimate: 1,
                     content: 'This is an example of the unit training material.'
                   )
-unit4.create_badge({name: 'Salesforce Trivia', image_url: 'https://placeimg.com/100/100/animals'})
+unit4.create_badge({name: 'Salesforce Trivia', image_url: '/assets/badge_salesforce_trivia.png'})
 
 questions_for_unit1 = Question.create([
   {
