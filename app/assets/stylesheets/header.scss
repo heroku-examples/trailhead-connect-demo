@@ -163,6 +163,11 @@ header {
           width: 45px;
           height: 45px;
 
+          @media (max-width: 1023px) {
+            width: 35px;
+            height: 35px;
+          }
+
           img {
             border-radius: 50%;
           }
