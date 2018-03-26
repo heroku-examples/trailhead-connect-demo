@@ -6,7 +6,7 @@
           <article class="tile">
             <div class="tile-header">
               <a title="<%= unit.title %>" class="tile-icon" href="<%= unit_path(unit) %>">
-                <img alt="<%= unit.title %> icon" class="tile-icon-image" src="<%= unit.badge.image_url %>">
+                <img alt="<%= unit.title %> icon" class="tile-icon-image" src="<%= image_path(unit.badge.image_url) %>">
               </a>
               <div class="tile-meta-content">
                 <div class="time-estimate"><%= pluralize(unit.time_estimate, 'minute') %></div>
