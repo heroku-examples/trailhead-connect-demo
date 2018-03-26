@@ -23,6 +23,10 @@ div.tiles-container {
   padding-bottom: 30px;
 
   .tile-container {
+    width: 100%;
+    @media (min-width: 574px) {
+      width: 50%;
+    }
     @media (min-width: 974px) {
       width: 33.333%;
     }
