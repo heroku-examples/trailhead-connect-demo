@@ -55,8 +55,8 @@ This will deploy the app with a Heroku Postgres add-on, create the schema in the
 
 - [ ] Fix quiz page circles on mobile
 - [ ] Check for and fix any other mobile display issues
-- [ ] Change image_url sync to photourl to a custom field (formula with IMAGE())
-- [ ] Add avatar_image_url as custom field to contact?
+- [x] Change image_url sync to photourl to a custom field (formula with IMAGE())
+- [x] Add avatar_image_url as custom field to contact?
 - [ ] Show interstitial after quiz submit with quiz result (instead of flash)
 - [ ] Create and add badge for each unit
 - [ ] Finish writing quiz questions for each unit
@@ -66,5 +66,5 @@ This will deploy the app with a Heroku Postgres add-on, create the schema in the
 - [ ] Add to setup instructions of BRK and README steps to configure Heroku Connect using JSON settings import
 - [ ] Add Heroku Connect add on to app.json (check with Maciek if ok)
 - [ ] Style unit tiles
-- [ ] Create dataclip showing badge count by user
+- [x] Create dataclip showing badge count by user
 - [ ] Figure out optional Private/Shield Spaces and Heroku Flow demo extensions
