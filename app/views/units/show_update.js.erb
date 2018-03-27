@@ -36,15 +36,11 @@
     var matches = el.id.match(/quiz_submission_((\d+)_\d+)/)
     var answer_id = matches[1]
     var question_id = parseInt(matches[2])
-    console.log(answer_id)
-    console.log(question_id)
 
     var incorrect_questions = <%= incorrect_questions %>
-    console.log(incorrect_questions)
 
     if (incorrect_questions.includes(parseInt(question_id))) {
-      console.log('marking incorrect')
-      document.querySelector("label[for='" + answer_id + "'").classList.add('incorrect')
+      document.querySelector("label[for='" + answer_id + "']").classList.add('incorrect')
     }
   })
 <% end %>
