@@ -1,0 +1,50 @@
+<% if incorrect_questions.empty? %>
+  document.getElementById('quiz-result').innerHTML = ''
+  document.getElementById('badge-image').src = '<%= image_path(badge.image_url) %>'
+  document.getElementById('badge-name').innerHTML = '<%= badge.name %>'
+  var modal = document.getElementById('modal')
+  modal.classList.add('fade-in-open')
+  var backdrop = document.getElementById('backdrop')
+  backdrop.classList.add('backdrop-open')
+
+  function closeModal() {
+    modal.classList.remove('fade-in-open')
+    backdrop.classList.remove('backdrop-open')
+    window.location.href = '/units'
+  }
+
+  function escapeHandler(e) {
+    if((e.key=='Escape'||e.key=='Esc'||e.keyCode==27) && (e.target.nodeName=='BODY')){
+      e.preventDefault()
+      window.removeEventListener('keydown', escapeHandler, true)
+      closeModal()
+    }
+  }
+
+  function clickHandler(e) {
+    e.preventDefault()
+    window.removeEventListener('mousedown', clickHandler, true)
+    closeModal()
+  }
+
+  var escapeListener = window.addEventListener('keydown', escapeHandler, true)
+  var clickListener  = window.addEventListener('mousedown', clickHandler, true)
+<% else %>
+  document.getElementById('quiz-result').innerHTML = "You've got <%= pluralize(incorrect_questions.count, 'wrong answer') %>."
+
+  document.querySelectorAll("input[type=radio]:checked").forEach(function(el) {
+    var matches = el.id.match(/quiz_submission_((\d+)_\d+)/)
+    var answer_id = matches[1]
+    var question_id = parseInt(matches[2])
+    console.log(answer_id)
+    console.log(question_id)
+
+    var incorrect_questions = <%= incorrect_questions %>
+    console.log(incorrect_questions)
+
+    if (incorrect_questions.includes(parseInt(question_id))) {
+      console.log('marking incorrect')
+      document.querySelector("label[for='" + answer_id + "'").classList.add('incorrect')
+    }
+  })
+<% end %>

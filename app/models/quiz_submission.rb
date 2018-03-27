@@ -9,8 +9,10 @@ class QuizSubmission < ApplicationRecord
 
     # Add skipped questions to array
     unit.questions.each do |q|
-      incorrect_question_ids << q.id unless answers.has_key?(q.id.to_s)
+      incorrect_question_ids << q.id unless answers && answers.has_key?(q.id.to_s)
     end
+
+    return incorrect_question_ids unless answers
 
     # Add incorrectly answered questions to the array
     answers.each do |question_id, answer_index|

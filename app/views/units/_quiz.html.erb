@@ -1,9 +1,9 @@
-<%= form_tag quiz_submission_index_path do %>
+<%= form_tag quiz_submission_index_path, remote: true do %>
   <header class="quiz-header">
     <h2>Quiz</h2>
   </header>
   <div class="questions">
-    <% unit.questions.shuffle.each_with_index do |question, question_index| %>
+    <% unit.questions.each_with_index do |question, question_index| %>
       <fieldset class="question">
         <legend>
           <div class="legend">
@@ -32,7 +32,10 @@
   <footer class="quiz-footer">
     <div class="quiz-footer-container">
       <%= hidden_field :unit, :id %>
-      <%= button_tag "Submit Answers" %>
+      <%= button_tag "Submit Answers", remote: true, data: { disable_with: "Checking answers..." } %>
+      <div class="error">
+        <p id="quiz-result"></p>
+      </div>
     </div>
   </footer>
 <% end %>

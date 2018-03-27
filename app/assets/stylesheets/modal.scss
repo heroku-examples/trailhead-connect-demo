@@ -1,0 +1,120 @@
+.backdrop {
+  transition-duration: .4s;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  visibility: hidden;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 9000;
+}
+
+.backdrop.backdrop-open {
+  background: #16325c;
+  opacity: .75;
+  visibility: visible;
+  transition: opacity .4s linear;
+}
+
+.modal {
+  opacity: 0;
+  visibility: hidden;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 9001;
+  
+
+  .modal-container {
+    position: relative;
+    transform: translate(0);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 2rem;
+    height: 100%;
+    padding: 3rem 0;
+    border-radius: .25rem;
+    transition: transform .1s linear,opacity .1s linear;
+    @media (min-width: 48em) {
+      margin: 0 auto;
+      width: 50%;
+      max-width: 40rem;
+      min-width: 20rem;
+    }
+
+    @media (max-width: 30rem) {
+      margin: 0;
+      background: #fff;
+      border-radius: 0;
+      padding: 0;
+    }
+
+    div.modal-header {
+      position: relative;
+      border-top-right-radius: .25rem;
+      border-top-left-radius: .25rem;
+      text-align: center;
+      padding: 0;
+      border-bottom: 0;
+      flex-shrink: 0;
+      background: #fdfdfd;
+    }
+
+    .modal-content {
+      padding: 2rem;
+      text-align: center;
+      background: #fdfdfd;
+      border-radius: .5rem;
+      
+
+      h2 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        line-height: 2rem;
+      }
+
+      .earned-badge {
+        margin: 1.5rem;
+        padding: 1.5rem;
+
+        img {
+          width: 85px;
+        }
+
+        p {
+          margin: 2rem 0 2rem 0;
+          font-size: 1.25rem;
+          font-style: italic;
+        }
+
+        h3 {
+          margin: .5rem 0;
+          font-size: 1.5rem;
+        }
+      }
+    }
+
+    div.modal-footer {
+      position: relative;
+      border-bottom-right-radius: .25rem;
+      border-bottom-left-radius: .25rem;
+      text-align: center;
+      padding: 0;
+      border-top: 0;
+      flex-shrink: 0;
+      background: #fdfdfd;    
+    }
+  }
+}
+
+.modal.fade-in-open {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity .1s linear;
+}

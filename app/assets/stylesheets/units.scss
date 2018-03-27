@@ -384,6 +384,13 @@ div.tiles-container {
                   box-shadow: 0 2px 0 transparent;
                   flex-shrink: 0;
                 }
+
+                .error {
+                  font-size: 1rem;
+                  margin: 0 1rem;
+                  color: #721c24;
+                  font-style: italic;
+                }
               }
             }
           }

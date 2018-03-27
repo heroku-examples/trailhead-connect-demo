@@ -10,6 +10,8 @@
   </head>
 
   <body>
+    <%= render 'layouts/modal' %>
+
     <div id="flash_messages"><%= flash_messages(:fade, :fade_in) %></div>
 
     <header>
@@ -55,7 +57,7 @@
         <div class='footer-rows'>
           <div class='statement'>
             <img alt="salesforce logo" class="salesforce-logo" src="<%= asset_path('salesforce-logo.svg') %>" />
-            <p>© Copyright 2000-2018 salesforce.com, inc. All rights reserved.</p>
+            <p>© Copyright 2000-<%= Time.now.year %> salesforce.com, inc. All rights reserved.</p>
             <p>Various trademarks held by their respective owners.</p>
             <p>Salesforce.com, inc. The Landmark @ One Market, Suite 300, San Francisco, CA 94105, United States</p>
           </div>
