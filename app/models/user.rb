@@ -28,10 +28,10 @@ class User < ApplicationRecord
     User.connection.execute <<~SQL
       UPDATE salesforce.contact
         SET
-          salesforce.contact.firstname    = '#{firstname}',
-          salesforce.contact.lastname     = '#{lastname}',
-          salesforce.contact.description  = '#{description}',
-          salesforce.contact.image_url__c = '#{image_url}'
+          firstname    = '#{firstname}',
+          lastname     = '#{lastname}',
+          description  = '#{description}',
+          image_url__c = '#{image_url}'
         WHERE salesforce.contact.trailhead_user_id__c = #{id};
     SQL
   end

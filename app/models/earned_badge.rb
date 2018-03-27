@@ -23,8 +23,8 @@ class EarnedBadge < ApplicationRecord
     EarnedBadge.connection.execute <<~SQL
       UPDATE salesforce.badgeuser__c
         SET
-          salesforce.badgeuser__c.contact__c = (SELECT sfid FROM salesforce.contact WHERE trailhead_user_id__c = #{user.id}),
-          salesforce.badgeuser__c.badge__c   = (SELECT sfid FROM salesforce.badge__c WHERE trailhead_badge_id__c = #{badge.id})
+          contact__c = (SELECT sfid FROM salesforce.contact WHERE trailhead_user_id__c = #{user.id}),
+          badge__c   = (SELECT sfid FROM salesforce.badge__c WHERE trailhead_badge_id__c = #{badge.id})
         WHERE salesforce.badgeuser__c.trailhead_earned_badge_id__c = #{id};
     SQL
   end

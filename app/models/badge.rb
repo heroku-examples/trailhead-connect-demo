@@ -18,8 +18,8 @@ class Badge < ApplicationRecord
     Badge.connection.execute <<~SQL
       UPDATE salesforce.badge__c
         SET
-          salesforce.badge__c.name         = '#{name}',
-          salesforce.badge__c.image_url__c = '#{image_url}'
+          name         = '#{name}',
+          image_url__c = '#{image_url}'
         WHERE salesforce.badge__c.trailhead_badge_id__c = #{id};
     SQL
   end
