@@ -58,9 +58,9 @@ This will deploy the app with a Heroku Postgres add-on, create the schema in the
 - [x] @crcastle Show interstitial after badge earned after correct quiz submission (instead of flash)
 - [ ] @crcastle Finish writing quiz questions for each unit
 - [ ] @crcastle Add educational material for each unit
-- [ ] @crcastle Customize Salesforce org Home tab, Contact list view, Contact show view (show image_url?), nav bar, and app launcher
 - [ ] @crcastle Figure out optional Private/Shield Spaces and Heroku Flow demo extensions
 - [ ] @crcastle Figure out where to show QR code making it easier for attendees to get to https://heroku-trailhead-demo.herokuapp.com
+- [x] @crcastle Customize Salesforce org Home tab, Contact list view, Contact show view (show image_url?), nav bar, and app launcher
 - [x] @crcastle Style flash message for "You must be logged in to do that"
 - [x] Fix quiz page circles on mobile
 - [x] Check for and fix any other mobile display issues (what i've found so far: tiles on /units  (`units#index` view) are different widths, when logged in, avatar in top right spills below header, footer columns break to new line strangely, shrink size of character tiles on /login (`sessions#new` view) so that more than one is shown per line)
