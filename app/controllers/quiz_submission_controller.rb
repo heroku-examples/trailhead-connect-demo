@@ -31,6 +31,10 @@ class QuizSubmissionController < ApplicationController
 
     respond_to do |format|
       format.js do
+        session.delete(:unit)
+        session.delete(:submitted_answers)
+        session.delete(:incorrect_questions)
+
         render 'units/show_update', locals: { badge: earned_badge ? earned_badge.badge : nil,
                                               incorrect_questions: incorrect_question_ids }
       end
