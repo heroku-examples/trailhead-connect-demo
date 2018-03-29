@@ -9,28 +9,28 @@
 unit1 = Unit.create(title: 'Introduction to Heroku',
                     description: 'Learn what Heroku is and how to try it out.',
                     time_estimate: 1,
-                    content: 'This is an example of the unit training material.'
+                    content: ''
                   )
 unit1.create_badge({name: 'Heroku Beginner', image_url: 'badge_heroku_intro.png'})
 
 unit2 = Unit.create(title: 'Heroku Fundamentals',
                     description: 'Expand your knowledge of Heroku, and learn why so many developers love it.',
                     time_estimate: 1,
-                    content: 'This is an example of the unit training material.'
+                    content: ''
                   )
 unit2.create_badge({name: 'Heroku Intermediate', image_url: 'badge_heroku_fundamentals.png'})
 
 unit3 = Unit.create(title: 'Heroku Power Features',
                     description: 'Solidify your advanced knowledge of Heroku features.',
                     time_estimate: 1,
-                    content: 'This is an example of the unit training material.'
+                    content: ''
                   )
 unit3.create_badge({name: 'Heroku Advanced', image_url: 'badge_power_features.png'})
 
 unit4 = Unit.create(title: 'Salesforce Trivia',
                     description: 'General trivia about the history of Salesforce.',
                     time_estimate: 1,
-                    content: 'This is an example of the unit training material.'
+                    content: ''
                   )
 unit4.create_badge({name: 'Salesforce Trivia', image_url: 'badge_salesforce_trivia.png'})
 
@@ -64,6 +64,16 @@ questions_for_unit1 = Question.create([
       { text: 'running applications, Heroku PostgreSQL, and Heroku Redis', is_correct: false },
       { text: 'running applications, Heroku PostgreSQL, Heroku Redis, and many other add-on services', is_correct: true }
     ],
+  },
+  {
+    question_text: 'To get started with Heroku, you need...',
+    unit: unit1,
+    answers: [
+      { text: 'to be a DevOps Engineer', is_correct: false },
+      { text: 'an infrastructure team to manage server hardware', is_correct: false },
+      { text: 'a degree in Computer Science', is_correct: false },
+      { text: 'none of the above', is_correct: true }
+    ]
   }
 ])
 
@@ -79,24 +89,24 @@ questions_for_unit2 = Question.create([
     ],
   },
   {
-    question_text: 'Deploy, Manage, Scale question',
+    question_text: 'Heroku Teams makes which of the following easier?',
     unit: unit2,
     answers: [
-      { text: '', is_correct: false },
-      { text: '', is_correct: false },
-      { text: '', is_correct: true },
-      { text: '', is_correct: false }
+      { text: 'Collaboration with other developers', is_correct: false },
+      { text: 'Permissions management for multiple users', is_correct: false },
+      { text: 'Billing for multiple apps within a company', is_correct: false },
+      { text: 'All of the above', is_correct: true }
     ],
   },
   {
-    question_text: 'Heroku Flow question',
+    question_text: 'What is Heroku Flow?',
     unit: unit2,
     answers: [
-      { text: '', is_correct: false },
-      { text: '', is_correct: false },
-      { text: '', is_correct: true },
-      { text: '', is_correct: false }
-    ],
+      { text: 'A static type checker for JavaScript.', is_correct: false },
+      { text: 'Pipelines, Review Apps, CI and GitHub integrations combined into an easy-to-use structured workflow for continuous delivery.', is_correct: true },
+      { text: 'A web-based data processing configuration tool.', is_correct: false },
+      { text: 'A streaming music service designed to help developers get into a flow state.', is_correct: false }
+    ]
   }
 ])
 
@@ -112,7 +122,7 @@ questions_for_unit3 = Question.create([
     ],
   },
   {
-    question_text: 'Where can you deploy your apps using Heroku Private Spaces?',
+    question_text: 'In which locations can you deploy your apps using Heroku Private Spaces?',
     unit: unit3,
     answers: [
       { text: 'Virginia, USA and Oregon, USA', is_correct: false },
@@ -122,13 +132,13 @@ questions_for_unit3 = Question.create([
     ],
   },
   {
-    question_text: 'You can deploy HIPAA and PCI Level 1 compliant apps to Heroku with...',
+    question_text: 'Which of the following provide a HIPAA and PCI Level 1 compliant platform on which to deploy apps?',
     unit: unit3,
     answers: [
-      { text: 'Shield Private Spaces', is_correct: true },
-      { text: '', is_correct: false },
-      { text: '', is_correct: false },
-      { text: '', is_correct: false }
+      { text: 'Heroku Private Spaces', is_correct: false },
+      { text: 'Heroku Shield Private Spaces', is_correct: true },
+      { text: 'Heroku Postgres', is_correct: false },
+      { text: 'Heroku Flow', is_correct: false }
     ],
   }
 ])
@@ -140,7 +150,7 @@ questions_for_unit4 = Question.create([
     answers: [
       { text: 'Astro', is_correct: false },
       { text: 'SaaSy', is_correct: true },
-      { text: 'Cody', is_correct: false },
+      { text: 'Codey', is_correct: false },
       { text: 'Hootie McOwlface', is_correct: false }
     ],
   },
@@ -168,10 +178,10 @@ questions_for_unit4 = Question.create([
     question_text: 'What is the fun way to learn Salesforce?',
     unit: unit4,
     answers: [
-      { text: 'Trailhead', is_correct: true },
-      { text: 'Second answer choice', is_correct: false },
-      { text: 'Third answer choice', is_correct: false },
-      { text: 'Reading every single page on help.salesforce.com', is_correct: false }
+      { text: 'Trailhead.', is_correct: true },
+      { text: 'Staying up late every night trying to figure it out on your own.', is_correct: false },
+      { text: 'Plugging your brain in using nanobioelectronics technology.', is_correct: false },
+      { text: 'Reading every single page on help.salesforce.com.', is_correct: false }
     ]
   }
 ])
