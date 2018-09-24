@@ -5,7 +5,9 @@
       <ol class="character-list">
         <% @users.shuffle.each do |user| %>
           <li style="list-style-type: none; display: inline-block; vertical-align: top;">
-            <input type="image" name="user[name]" value="<%= user.name %>" alt="<%= user.name %>" src="<%= path_to_image(user.image_url) %>">
+            <button type="submit" name="user[name]" value="<%= user.name %>">
+              <img src="<%= path_to_image(user.image_url) %>" alt="<%= user.name %>">
+            </button>
             <div class="character-info">
               <h2>
                 <%= user.name %> 

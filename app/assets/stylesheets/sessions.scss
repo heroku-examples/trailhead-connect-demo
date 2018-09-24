@@ -44,11 +44,12 @@
       }
     }
 
-    input {
+    button[type="submit"] {
       width: 100%;
       padding: 20px;
       display: block;
       background-color: white;
+      border-width: 0px;
       border-radius: 12px 12px 0 0;
       transition: background-color .3s ease-in-out;
 
