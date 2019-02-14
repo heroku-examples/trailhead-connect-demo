@@ -38,10 +38,12 @@
   },
   "formation": {
     "web": {
-      "quantity": 1
+      "quantity": 1,
+      "size": "standard-1x"
     },
     "release": {
-      "quantity": 0
+      "quantity": 0,
+      "size": "standard-1x"
     }
   },
   "addons": [
